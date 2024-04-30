@@ -11,13 +11,13 @@ namespace ConsoleAppVendedores
         static void Main(string[] args)
         {
      
-                const int numeroDeVendedores = 5;
-                string[] nomes = new string[numeroDeVendedores];
-                decimal[] vendas = new decimal[numeroDeVendedores];
-                decimal[] comissoes = new decimal[numeroDeVendedores];
+                const int ndevendedores = 5;
+                string[] nomes = new string[ndevendedores];
+                decimal[] vendas = new decimal[ndevendedores];
+                decimal[] comissoes = new decimal[ndevendedores];
 
                 
-                for (int i = 0; i < numeroDeVendedores; i++)
+                for (int i = 0; i < ndevendedores; i++)
                 {
                     Console.WriteLine($"Digite o nome do vendedor {i + 1}:");
                     nomes[i] = Console.ReadLine();
@@ -28,27 +28,25 @@ namespace ConsoleAppVendedores
                    
                     if (vendas[i] <= 20000)
                     {
-                        comissoes[i] = vendas[i] * 0.05m; // 5%
+                        comissoes[i] = vendas[i] * 0.05m; 
                     }
                     else if (vendas[i] <= 40000)
                     {
-                        comissoes[i] = vendas[i] * 0.06m; // 6%
+                        comissoes[i] = vendas[i] * 0.06m; 
                     }
                     else
                     {
-                        comissoes[i] = vendas[i] * 0.07m; // 7%
+                        comissoes[i] = vendas[i] * 0.07m; 
                     }
                 }
 
                 
-                Console.WriteLine("\nResultados das Vendas:");
-                for (int i = 0; i < numeroDeVendedores; i++)
+                Console.WriteLine($"Resultados das Vendas:");
+                for (int i = 0; i < ndevendedores; i++)
                 {
                     Console.WriteLine($"{nomes[i]} - Total de Vendas: R${vendas[i]:N2}, Comissão: R${comissoes[i]:N2}");
                 }
 
-                
-                Console.WriteLine("\nPressione qualquer tecla para encerrar...");
                 Console.ReadKey();
             }
         }
